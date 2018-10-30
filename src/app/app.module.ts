@@ -1,18 +1,35 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 
+// Rutas
+import { routing, appRoutingProviders } from './app.routing';
+
+// Componentes
 import { AppComponent } from './app.component';
+import { HomeComponent } from './componentes/home/home.component';
+import { CuidadoresComponent } from './componentes/cuidadores/cuidadores.component';
+import { ContactoComponent } from './componentes/contacto/contacto.component';
+import { AnimalesComponent } from './componentes/animales/animales.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    CuidadoresComponent,
+    ContactoComponent,
+    AnimalesComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    routing
   ],
-  providers: [],
+  providers: [appRoutingProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
