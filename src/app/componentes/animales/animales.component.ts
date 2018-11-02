@@ -14,6 +14,7 @@ export class AnimalesComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(localStorage.getItem('email'));
   }
 
 }

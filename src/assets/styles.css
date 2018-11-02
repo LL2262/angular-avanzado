@@ -1,0 +1,45 @@
+.navbar-inverse .navbar-nav>li>a {
+    color: #9d9d9d;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover{
+    transition: 300ms ease;
+}
+
+.dropdown.open .dropdown-menu {
+    display: block;
+    opacity: 1;
+    background-color:  #222;
+    border-color: #080808;   
+}
+
+
+.dropdown-menu>li>a{
+    color: #eee;
+    display: block;
+    text-decoration: none;
+}
+
+.dropdown-menu>li>a:hover{
+    background: #eee;
+    color: #222;
+    transition: 300ms ease;
+}
+
+.expand_caret {
+    transform: scale(1.6);
+    margin-left: 8px;
+    margin-top: -4px;
+}
+a[aria-expanded='true'] > .expand_caret {
+    transform: scale(1.6) rotate(180deg);
+}
+
+.alert-danger{
+    background: transparent;
+    color: #dd4b39;
+}
+
+.navbar {
+    border-radius: 0px;
+}
