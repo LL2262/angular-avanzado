@@ -1,28 +1,52 @@
+#main .jumbotron{
+    padding: 30px;
+    padding-top: 5px;
+    margin-top: -5px;
+    border-radius: 10px;
+    background: #eee;
+    box-shadow: 3px 3px 2px #ccc;
+}
+
+.navbar-inverse {
+    background-color: forestgreen;
+    border-color: darkgreen;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+
+
 .navbar-inverse .navbar-nav>li>a {
-    color: #9d9d9d;
+    color: white;
 }
 
 .navbar-inverse .navbar-nav>li>a:hover{
     transition: 300ms ease;
+    color: black;
+}
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
+    color: black;
+    background-color: darkgreen;
 }
 
 .dropdown.open .dropdown-menu {
     display: block;
     opacity: 1;
-    background-color:  #222;
-    border-color: #080808;   
+    background-color:  forestgreen;
+    border-color: darkgreen;   
 }
 
-
 .dropdown-menu>li>a{
-    color: #eee;
+    color: white;
     display: block;
     text-decoration: none;
 }
 
 .dropdown-menu>li>a:hover{
     background: #eee;
-    color: #222;
+    color: black;
     transition: 300ms ease;
 }
 
@@ -42,4 +66,8 @@ a[aria-expanded='true'] > .expand_caret {
 
 .navbar {
     border-radius: 0px;
+}
+
+.navbar-nav .active{
+    border-bottom: 3px solid orange;
 }

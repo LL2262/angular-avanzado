@@ -14,23 +14,23 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a [routerLink]="['/home']" class="home" >
+                        <a [routerLink]="['/home']" class="home" [routerLinkActive]="['active']">
                             <i class="fa fa-home"></i> Home</a>
                     </li>
                     <li>
-                        <a [routerLink]="['/animales']" class="home" >
+                        <a [routerLink]="['/animales']" class="home" [routerLinkActive]="['active']">
                             <i class="fa fa-paw"></i> Animales</a>
                     </li>
                     <li>
-                        <a [routerLink]="['/cuidadores']" class="home" >
+                        <a [routerLink]="['/cuidadores']" class="home" [routerLinkActive]="['active']">
                             <i class="fa fa-male"></i> Cuidadores</a>
                     </li>
                     <li>
-                        <a [routerLink]="['/contacto']" class="home" >
+                        <a [routerLink]="['/contacto']" class="home" [routerLinkActive]="['active']">
                             <i class="fa fa-phone"></i> Contacto</a>
                     </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Modulos
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" [routerLinkActive]="['active']">Modulos
                             <span class="expand_caret caret"></span>
                         </a>
                         <ul class="dropdown-menu">
