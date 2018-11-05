@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+//Importar nuevos modulos
+import { AdminModule } from './admin/admin.module';
 
 // Rutas
 import { routing, appRoutingProviders } from './app.routing';
@@ -27,7 +29,8 @@ import { AnimalesComponent } from './componentes/animales/animales.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    AdminModule
   ],
   providers: [appRoutingProviders],
   bootstrap: [AppComponent]
