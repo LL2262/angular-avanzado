@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './listado.component.html',
 })
 export class AdminListadoComponent {
-  titulo = 'Listado de';
+  titulo = 'Listado';
 }

@@ -1,2 +1,20 @@
-<h1>{{titulo}}</h1>
-<router-outlet></router-outlet>
+<div class="col-md-2">
+    <h3>{{titulo}}</h3>
+    <div class="sidebar-admin" data-ecample-id="sample-nav-stacked">
+        <ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
+            <li role="presentation" [routerLinkActive]="['active']">
+                <a [routerLink]="['listado']">Listado</a>
+            </li>
+            <li role="presentation" [routerLinkActive]="['active']">
+                <a [routerLink]="['crear']">Crear</a>
+            </li>
+            <li role="presentation">
+                <a [routerLink]="['listado']">Información</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="col-md-10">
+    <router-outlet></router-outlet>
+</div>
