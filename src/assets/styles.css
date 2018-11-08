@@ -29,34 +29,27 @@
 .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
     color: black;
     background-color: darkgreen;
+    border-color: transparent;
 }
 
-.dropdown:hover .dropdown-menu {
+.dropdown.open .dropdown-menu {
     display: block;
-    color: white;
     opacity: 1;
     background-color:  forestgreen;
     border-color: forestgreen;
-}
+} 
 
-/* .dropdown.open .dropdown-menu {
-    display: block;
-    opacity: 1;
-    background-color:  forestgreen;
-    border-color: forestgreen;   
-} */
-
-/* .dropdown-menu>li>a{
-    color: white;
+.dropdown-menu>li>a{
+    color: white !important;
     background-color:  forestgreen;
     text-decoration: none;
     border-color: forestgreen;
-} */
+}
 
 .dropdown-menu>li>a:hover{
     background: #eee;
-    color: black;
-    transition: 300ms ease;
+    color: black !important;
+    transition: 400ms ease;
 }
 
 .expand_caret {
@@ -83,4 +76,24 @@ a[aria-expanded='true'] > .expand_caret {
 
 .navbar-nav .active{
     border-bottom: 3px solid orange !important;
+}
+
+.prueba{
+    width: 200px;
+    height: 200px;
+    border: 20px solid orange;
+    background: #ccc
+}
+
+.pruebahijo{
+    width: 160px;
+    height: 160px;
+    background: green;
+    display: inline-block;
+    transition: 400ms ease-in-out;
+    pointer-events: none
+}
+
+.prueba:hover .pruebahijo{
+    transform: translate(200px, 200px) rotate(90deg);
 }

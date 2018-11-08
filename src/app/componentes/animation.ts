@@ -4,10 +4,13 @@ export let fundido =
     trigger('fadeIn', [
         transition(':enter', [
             style({
-                opacity: 0
+                opacity: 0,
+                transform: 'translateY(-15%)'
             }),
-            animate('500ms linear', style({
-                opacity: 1
+            animate('300ms linear', 
+            style({
+                opacity: 1,
+                transform: 'translateY(0)'
             }))
         ]),
     ]);
