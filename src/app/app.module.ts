@@ -16,6 +16,8 @@ import { HomeComponent } from './componentes/home/home.component';
 import { CuidadoresComponent } from './componentes/cuidadores/cuidadores.component';
 import { ContactoComponent } from './componentes/contacto/contacto.component';
 import { AnimalesComponent } from './componentes/animales/animales.component';
+import { RegistroComponent } from './componentes/registro/registro.component';
+import { LoginComponent } from './componentes/login/login.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { AnimalesComponent } from './componentes/animales/animales.component';
     HomeComponent,
     CuidadoresComponent,
     ContactoComponent,
-    AnimalesComponent
+    AnimalesComponent,
+    RegistroComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
