@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { fundido } from '../animation';
 import { Usuario } from '../../modelos/usuario';
-import { GLOBAL } from '../../servicios/global';
 import { UsuarioService } from '../../servicios/usuario.service';
 
 @Component({
@@ -15,8 +14,9 @@ export class RegistroComponent implements OnInit {
 
   public titulo: string;
   public usuario: Usuario;
+  public status: number;
 
-  constructor( private _route: ActivatedRoute, private _router: Router, private _UsuarioService: UsuarioService){
+  constructor(private _route: ActivatedRoute, private _router: Router, private _UsuarioService: UsuarioService){
 
     this.titulo = 'Registro';
     this.usuario = new Usuario('','','','','','USUARIO','');
@@ -26,9 +26,22 @@ export class RegistroComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(){
+  onSubmit(registerForm){
     console.log(this.usuario);
-    console.log(this._UsuarioService.registro());
+    this._UsuarioService.registro(this.usuario).subscribe(
+      response => {
+        if(response.user && response.user._id){
+          this.status = 200;
+          this.usuario = new Usuario('','','','','','USUARIO','');
+          registerForm.reset();
+        }else{
+          this.status = 404;
+        }
+      },
+      error => {
+        console.log(<any>error);
+      }
+    );
   }
 
 }

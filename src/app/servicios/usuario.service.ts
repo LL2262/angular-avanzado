@@ -12,7 +12,10 @@ export class UsuarioService{
         this.url = GLOBAL.url;
     }
 
-    registro(){
-        return "Texto desde el servicio";
+    registro(usuarioRegistro){
+        let params =JSON.stringify(usuarioRegistro);
+        let headers = new Headers({'Content-Type':'application/json'});
+
+        return this._http.post(this.url+'registro', params, {headers:headers}).map(res => res.json());
     }
 }
