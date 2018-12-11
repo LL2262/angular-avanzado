@@ -13,9 +13,22 @@ export class UsuarioService{
     }
 
     registro(usuarioRegistro){
+
         let params =JSON.stringify(usuarioRegistro);
         let headers = new Headers({'Content-Type':'application/json'});
 
         return this._http.post(this.url+'registro', params, {headers:headers}).map(res => res.json());
+    }
+
+    login(usuarioLogin, gettoken = null){
+        
+        if(gettoken != null){
+            usuarioLogin.gettoken = gettoken;
+        }
+
+        let params =JSON.stringify(usuarioLogin);
+        let headers = new Headers({'Content-Type':'application/json'});
+
+        return this._http.post(this.url+'login', params, {headers:headers}).map(res => res.json());
     }
 }
