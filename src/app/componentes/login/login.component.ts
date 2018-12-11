@@ -48,16 +48,19 @@ export class LoginComponent implements OnInit {
               } else {
                 //Mostrar Token
                 console.log(this.token);
+                this.status = 202;
               }
             },
             error => {
               console.log(<any>error);
+              this.status = 505;
             }
           );
         }
       },
       error => {
         console.log(<any>error);
+        this.status = 404;
       }
     );
   }
