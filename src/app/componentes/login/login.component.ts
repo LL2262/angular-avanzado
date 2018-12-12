@@ -52,6 +52,7 @@ export class LoginComponent implements OnInit {
                 //Persistencia de token en localStorage
                 localStorage.setItem('token', this.token);
                 this.status = 202;
+                this._router.navigate(['/']);
               }
             },
             error => {

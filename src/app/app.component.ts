@@ -10,6 +10,7 @@ import { UsuarioService } from './servicios/usuario.service';
 export class AppComponent implements OnInit{
 
   public titulo: string;
+  public identity;
 
   constructor(private _UsuarioService: UsuarioService){
 
@@ -18,7 +19,10 @@ export class AppComponent implements OnInit{
    }
 
   ngOnInit(){
-    console.log(this._UsuarioService.getIdentity());
-    console.log(this._UsuarioService.getToken());
+    this.identity = this._UsuarioService.getIdentity();
+  }
+
+  ngDoCheck(){
+    this.identity = this._UsuarioService.getIdentity();
   }
 }
