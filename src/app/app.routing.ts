@@ -8,6 +8,7 @@ import { ContactoComponent } from './componentes/contacto/contacto.component';
 import { AnimalesComponent } from './componentes/animales/animales.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { LoginComponent } from './componentes/login/login.component';
+import { UsuarioEditComponent } from './componentes/usuario/usuario-edit.component';
 
 const appRoutes: Routes = [
     {path: '', component: HomeComponent},
@@ -17,7 +18,8 @@ const appRoutes: Routes = [
     {path: 'cuidadores', component: CuidadoresComponent},
     {path: 'registro', component: RegistroComponent},
     {path: 'login', component: LoginComponent},
-    {path: '**', component: HomeComponent}
+    {path: 'mis-datos', component: UsuarioEditComponent},
+    {path: '**', component: HomeComponent},
     
 ];
 

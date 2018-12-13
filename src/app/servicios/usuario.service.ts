@@ -58,4 +58,14 @@ export class UsuarioService{
 
         return this.token;
     }
+
+    usuarioUpdate(usuarioUpdate){
+        let params =JSON.stringify(usuarioUpdate);
+        let headers = new Headers({
+            'Content-Type':'application/json',
+            'Authorization': this.getToken()
+        });
+
+        return this._http.put(this.url+'update-user/'+usuarioUpdate._id, params, {headers:headers}).map(res => res.json());
+    }
 }

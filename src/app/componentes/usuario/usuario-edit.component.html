@@ -1,0 +1,40 @@
+<div class="jumbotron col-md-4 col-md-offset-4" [@fadeIn]>
+        <h2 class="text-center">{{titulo}}</h2>
+
+        <div class="alert alert-success" *ngIf="status == 200">
+            Datos actualizados correctamente
+        </div>
+        <div class=" alert alert-danger" *ngIf="status == 404">
+            Error al actualizar los datos
+        </div>
+
+        <form #userEditForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="usuario.nombre" class="form-control text-uppercase"
+                    required />
+                <span *ngIf="!nombre.valid && nombre.touched" class="text-danger">El nombre es obligatorio</span>
+            </div>
+            <div class="form-group">
+                <label>Apellido</label>
+                <input type="text" name="apellido" #apellido="ngModel" [(ngModel)]="usuario.apellido" class="form-control text-uppercase"
+                    required />
+                <span *ngIf="!apellido.valid && apellido.touched" class="text-danger">El apellido es obligatorio</span>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" #email="ngModel" [(ngModel)]="usuario.email" class="form-control"
+                    required />
+                <span *ngIf="!email.valid && email.touched" class="text-danger">El email es obligatorio</span>
+            </div>
+
+            <div class="form-group">
+                <label>Imagen de Avatar</label>
+                <input type="file" placeholder="Subir imagen" class="form-control" (change)="fileChangeEvent($event)"/>
+            </div>
+
+            <div class="form-inline text-center">
+                <input type="submit" [disabled]="!userEditForm.form.valid" value="Actualizar" class="btn btn-primary" />
+            </div>
+        </form>
+</div>

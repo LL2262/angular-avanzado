@@ -30,37 +30,6 @@
                         <a [routerLink]="['/contacto']" class="home" [routerLinkActive]="['active']">
                             <i class="fa fa-phone"></i> Contacto</a>
                     </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" [routerLinkActive]="['active']">Modulos
-                            <span class="expand_caret caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a [routerLink]="['/centros']">
-                                    <i class="fa fa-blind"></i> Centros</a>
-                            </li>
-                            <li>
-                                <a [routerLink]="['/departamentos']">
-                                    <i class="fa fa-map"></i> Departamentos</a>
-                            </li>
-                            <li>
-                                <a [routerLink]="['/encuestadores']">
-                                    <i class="fa fa-user-md"></i> Encuestadores</a>
-                            </li>
-                            <li>
-                                <a [routerLink]="['/enfermedades']">
-                                    <i class="fa fa-medkit"></i> Enfermedades</a>
-                            </li>
-                            <li>
-                                <a [routerLink]="['/programas']">
-                                    <i class="fa fa-briefcase"></i> Programas</a>
-                            </li>
-                            <li>
-                                <a [routerLink]="['/territorios']">
-                                    <i class="fa fa-map-marker"></i> Territorios</a>
-                            </li>
-                        </ul>
-                    </li>
                     <li>
                         <a [routerLink]="['/admin-panel']" class="admin" [routerLinkActive]="['active']">
                             <i class="fa fa-edit"></i> Administrar</a>
@@ -83,12 +52,12 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="#">
+                                <a [routerLink]="['/mis-datos']">
                                     <span class="glyphicon glyphicon-cog"></span> Mis datos
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a [routerLink]="['/login']" (click)="logout()">
                                     <span class="glyphicon glyphicon-log-out"></span> Logout
                                 </a>
                             </li>

@@ -27,7 +27,6 @@ export class RegistroComponent implements OnInit {
   }
 
   onSubmit(registerForm){
-    console.log(this.usuario);
     this._UsuarioService.registro(this.usuario).subscribe(
       response => {
         if(response.user && response.user._id){

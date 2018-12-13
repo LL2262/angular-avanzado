@@ -18,6 +18,7 @@ import { ContactoComponent } from './componentes/contacto/contacto.component';
 import { AnimalesComponent } from './componentes/animales/animales.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { LoginComponent } from './componentes/login/login.component';
+import { UsuarioEditComponent } from './componentes/usuario/usuario-edit.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { LoginComponent } from './componentes/login/login.component';
     ContactoComponent,
     AnimalesComponent,
     RegistroComponent,
-    LoginComponent
+    LoginComponent,
+    UsuarioEditComponent
   ],
   imports: [
     BrowserModule,
