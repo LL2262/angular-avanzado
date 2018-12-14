@@ -7,10 +7,15 @@ import { AdminAgregarComponent } from './componentes/agregar/agregar.component';
 import { AdminEditarComponent } from './componentes/editar/editar.component';
 import { AdminListadoComponent } from './componentes/listado/listado.component';
 
+//Guards
+//Guards
+import { adminGuard } from '../servicios/admin.guards';
+
 const adminRoutes: Routes = [
     {
         path: 'admin-panel', 
         component: AdminComponent,
+        canActivate: [adminGuard],
         children: [
             {path: '', redirectTo: 'listado', pathMatch: 'full'},
             {path: 'listado', component: AdminListadoComponent},

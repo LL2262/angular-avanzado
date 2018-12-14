@@ -30,10 +30,6 @@
                         <a [routerLink]="['/contacto']" class="home" [routerLinkActive]="['active']">
                             <i class="fa fa-phone"></i> Contacto</a>
                     </li>
-                    <li>
-                        <a [routerLink]="['/admin-panel']" class="admin" [routerLinkActive]="['active']">
-                            <i class="fa fa-edit"></i> Administrar</a>
-                    </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right" *ngIf="!identity">
                     <li>
@@ -46,11 +42,19 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right" *ngIf="identity">
+                    <li>
+                        <img src="{{url + 'get-image-file/' + identity.image}}" class="img-circle avatar" />
+                    </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             {{identity.nombre}} <span class="expand_caret caret"></span>
                         </a>
                         <ul class="dropdown-menu">
+                            <li *ngIf="identity && identity.rol == 'ADMINISTRADOR'">
+                                <a [routerLink]="['/admin-panel']">
+                                    <span class="glyphicon glyphicon-tasks"></span> Administración
+                                </a>
+                            </li>
                             <li>
                                 <a [routerLink]="['/mis-datos']">
                                     <span class="glyphicon glyphicon-cog"></span> Mis datos

@@ -20,6 +20,11 @@ import { RegistroComponent } from './componentes/registro/registro.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { UsuarioEditComponent } from './componentes/usuario/usuario-edit.component';
 
+//Guards
+import { authGuard } from './servicios/auth.guard';
+
+//Servicios
+import { UsuarioService } from './servicios/usuario.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +45,7 @@ import { UsuarioEditComponent } from './componentes/usuario/usuario-edit.compone
     AdminModule,
     BrowserAnimationsModule
   ],
-  providers: [appRoutingProviders],
+  providers: [appRoutingProviders, authGuard, UsuarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

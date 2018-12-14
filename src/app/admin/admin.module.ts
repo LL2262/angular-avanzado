@@ -12,6 +12,12 @@ import { AdminAgregarComponent } from './componentes/agregar/agregar.component';
 import { AdminEditarComponent } from './componentes/editar/editar.component';
 import { AdminListadoComponent } from './componentes/listado/listado.component';
 
+//Guards
+import { adminGuard } from '../servicios/admin.guards';
+
+//Servicios
+import { UsuarioService } from '../servicios/usuario.service';
+
 @NgModule({
     declarations: [
       AdminComponent,
@@ -25,6 +31,6 @@ import { AdminListadoComponent } from './componentes/listado/listado.component';
       HttpModule,
       AdminRoutingModule
     ],
-    providers: []
+    providers: [adminGuard, UsuarioService]
   })
   export class AdminModule { }
