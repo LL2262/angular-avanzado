@@ -1,18 +1,39 @@
-<h3>{{titulo}}</h3>
+<div class="col-md-6">
+    <h3>{{titulo}}</h3>
 
-<form action="">
-    <p>
-        <label>Nombre</label>
-        <input type=" text" class="form-control">
-    </p>
-    <p>
-        <label>Descripcion</label>
-        <textarea class="form-control"></textarea>
-    </p>
-    <p>
-        <label>Año</label>
-        <input type=" text" class="form-control">
-    </p>
-    <input type="submit" value="Crear nuevo" class="btn btn-success">
+    <div class="alert alert-success" *ngIf="status == 202">
+        El animal se registro correctamente!
+    </div>
+    <div class=" alert alert-danger" *ngIf="status == 404">
+        Error, no se pudo registrar el animal!
+    </div>
 
-</form>
+    <form #formAddAnimal="ngForm" (ngSubmit)="onSubmit(formAddAnimal)">
+        <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="animal.nombre" class="form-control text-uppercase"
+                required />
+            <span *ngIf="!nombre.valid && nombre.touched" class="text-danger">El nombre es obligatorio</span>
+        </div>
+        <div class="form-group">
+            <label>Descripcion</label>
+            <textarea type="tex" name="descipcion" #descipcion="ngModel" [(ngModel)]="animal.descripcion" class="form-control text-uppercase"
+                required ></textarea>
+            <span *ngIf="!descipcion.valid && descipcion.touched" class="text-danger">La descripción es obligatorio</span>
+        </div>
+        <div class="form-group">
+            <label>Año</label>
+            <input type="text" name="ano" #ano="ngModel" [(ngModel)]="animal.ano" class="form-control"
+                required />
+            <span *ngIf="!ano.valid && ano.touched" class="text-danger">El año es obligatorio</span>
+        </div>
+        <div class="form-group">
+            <label>Imagen</label>
+            <input type="file" placeholder="Subir imagen" class="form-control" (change)="fileChangeEvent($event)"/>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" [disabled]="!formAddAnimal.form.valid" value="Añadir" class="btn btn-primary" />
+        </div>
+    </form>
+</div>

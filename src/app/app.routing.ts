@@ -9,6 +9,7 @@ import { AnimalesComponent } from './componentes/animales/animales.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { UsuarioEditComponent } from './componentes/usuario/usuario-edit.component';
+import { AnimalDetalleComponent } from './componentes/animales/animal-detalle.component';
 
 //Guards
 import { authGuard } from './servicios/auth.guard';
@@ -22,6 +23,7 @@ const appRoutes: Routes = [
     {path: 'registro', component: RegistroComponent},
     {path: 'login', component: LoginComponent},
     {path: 'mis-datos', component: UsuarioEditComponent},
+    {path: 'animal/:id', component: AnimalDetalleComponent},
     {path: '**', component: HomeComponent},
     
 ];

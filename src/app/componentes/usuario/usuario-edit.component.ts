@@ -48,7 +48,6 @@ export class UsuarioEditComponent implements OnInit {
                 .then((result: any)=> {
                     this.usuario.image = result.user.image;
                     localStorage.setItem('identity', JSON.stringify(this.usuario));
-                    console.log(this.usuario);
                 });
 
           }else{
