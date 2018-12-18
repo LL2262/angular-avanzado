@@ -8,7 +8,6 @@ import { AdminEditarComponent } from './componentes/editar/editar.component';
 import { AdminListadoComponent } from './componentes/listado/listado.component';
 
 //Guards
-//Guards
 import { adminGuard } from '../servicios/admin.guards';
 
 const adminRoutes: Routes = [
@@ -20,7 +19,7 @@ const adminRoutes: Routes = [
             {path: '', redirectTo: 'listado', pathMatch: 'full'},
             {path: 'listado', component: AdminListadoComponent},
             {path: 'crear', component: AdminAgregarComponent},
-            {path: 'editar', component: AdminEditarComponent}
+            {path: 'editar/:id', component: AdminEditarComponent}
         ]
     },
     {path: 'listado-del-panel', component: AdminListadoComponent}

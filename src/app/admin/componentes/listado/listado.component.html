@@ -14,11 +14,33 @@
                 <td>{{animal.nombre}}</td>
                 <td>{{animal.ano}}</td>
                 <td class="text-center">
-                    <a [routerLink]="['/animal', animal._id]" class="btn btn-success btn-sm"><i class="fa fa-search-plus" ></i></a>
+                    <a [routerLink]="['/animal', animal._id]" class="btn btn-success btn-sm"><i class="fa fa-search-plus"></i></a>
                     <b> |</b>
-                    <button type="button" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></button>
+                    <a [routerLink]="['/admin-panel/editar', animal._id]" type="button" class="btn btn-warning btn-sm"><i
+                            class="fa fa-edit"></i></a>
                     <b> |</b>
-                    <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                    <a href="#myModal-{{animal._id}}" type="button" class="btn btn-danger btn-sm" data-toggle="modal"><i class="fa fa-trash"></i></a>
+                    <!-- Modal -->
+                    <div id="myModal-{{animal._id}}" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Eliminar animal</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>¿Estas seguro que deseas eliminar a {{animal.nombre}} del Zoo?</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-success" (click)="onDelete(animal._id)">Aceptar</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </td>
             </tr>
         </tbody>

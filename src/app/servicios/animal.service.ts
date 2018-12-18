@@ -32,5 +32,21 @@ export class AnimalService{
         return this._http.get(this.url+'animal/'+id).map(res => res.json());
     }
 
+    editAnimal(token, id, animal){
+
+        let params = JSON.stringify(animal);
+        let headers = new Headers({'Content-Type':'application/json', 'Authorization':token});
+
+        return this._http.put(this.url+'update-animal/'+id, params, {headers:headers}).map(res => res.json());
+    }
+
+    deleteAnimal(token, id){
+
+        let headers = new Headers({'Content-Type':'application/json', 'Authorization':token});
+        let options = new RequestOptions ({headers:headers})
+
+        return this._http.delete(this.url+'delete-animal/'+id, options).map(res => res.json());
+    }
+
     
 }

@@ -33,7 +33,6 @@ export class AnimalDetalleComponent implements OnInit {
             response => {
                 if(response.animal){
                     this.animal = response.animal;
-                    console.log(this.animal);
                 }
             },
             error => {

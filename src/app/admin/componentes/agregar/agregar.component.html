@@ -17,9 +17,9 @@
         </div>
         <div class="form-group">
             <label>Descripcion</label>
-            <textarea type="tex" name="descipcion" #descipcion="ngModel" [(ngModel)]="animal.descripcion" class="form-control text-uppercase"
+            <textarea type="tex" name="descripcion" #descripcion="ngModel" [(ngModel)]="animal.descripcion" class="form-control text-uppercase"
                 required ></textarea>
-            <span *ngIf="!descipcion.valid && descipcion.touched" class="text-danger">La descripción es obligatorio</span>
+            <span *ngIf="!descripcion.valid && descripcion.touched" class="text-danger">La descripción es obligatorio</span>
         </div>
         <div class="form-group">
             <label>Año</label>
@@ -27,13 +27,16 @@
                 required />
             <span *ngIf="!ano.valid && ano.touched" class="text-danger">El año es obligatorio</span>
         </div>
+        <div class="form-group image_for_edit" *ngIf="animal.image && animal.image != 'null' && accion == 'Editar'">
+            <img src="{{url + 'get-image-animal/' + animal.image}}" style="width: 60px;" />
+        </div>
         <div class="form-group">
             <label>Imagen</label>
             <input type="file" placeholder="Subir imagen" class="form-control" (change)="fileChangeEvent($event)"/>
         </div>
 
         <div class="form-group">
-            <input type="submit" [disabled]="!formAddAnimal.form.valid" value="Añadir" class="btn btn-primary" />
+            <input type="submit" [disabled]="!formAddAnimal.form.valid" value="{{accion}}" class="btn btn-primary" />
         </div>
     </form>
 </div>

@@ -13,6 +13,7 @@ import { GLOBAL } from '../../../servicios/global';
 })
 export class AdminAgregarComponent implements OnInit {
   public titulo: string;
+  public accion: string;
   public identity;
   public token;
   public url: string;
@@ -24,6 +25,7 @@ export class AdminAgregarComponent implements OnInit {
   constructor(private _route: ActivatedRoute, private _router: Router,  private _UsuarioService: UsuarioService, private _UpdateService: UploadService, private _AnimalService: AnimalService){
 
     this.titulo = 'Añadir animal';
+    this.accion = 'Añadir';
     this.identity = this._UsuarioService.getIdentity();
     this.token = this._UsuarioService.getToken();
     this.url = GLOBAL.url;
@@ -45,7 +47,6 @@ export class AdminAgregarComponent implements OnInit {
           this._UpdateService.makeFileRequest(this.url+'upload-image-animal/'+response.animal._id, [], this.FileToUploads, this.token, 'image')
                 .then((result: any)=> {
                     this.animal.image = result.animal.image;
-                    console.log(this.animal);
                 });
 
           //Limpiar formulario
